@@ -1,18 +1,13 @@
 # GitHub Submission and Participation Log
 
-## Repository evidence
+## Project 2 Part 2: Signed Integer Program
 
-- Cache implementation commits in the visible local history:
-
-| Commit | Date | Subject | Git author |
-| --- | --- | --- | --- |
-| `79873d1` | 2026-10-01 | Created the cache | Abtsega Tesfaye Chufare |
-| `379b998` | 2026-10-03 | Calculated cache addressing | Faris Jiwad |
-| `379b998` | 2026-10-03 | Why is it not working | Faris Jiwad |
-| `685b4db` | 2026-10-04 | Finished cache, need to implement html | Faris Jiwad |
-| `ce7ad42` | 2026-10-05 | Finalized machine simulator | Lintao Mei |
-| `ce7ad42` | 2026-10-05 | Added Testing Suite | Lintao Mei |
-| `c2aafa8` | 2026-10-08 | Merge pull request #1 from `feature/project1-base` | Faris Jiwad |
-| `93912d3` | 2026-10-08 | Remove obsolete simulator artifacts from cache hand-in | Faris Jiwad |
-| `9d05ce8` | 2026-10-08 | Add rubric-aligned cache HTML test harness | Faris Jiwad |
+| Commit | Date | Change |
+| --- | --- | --- |
+| `3f3bffd` | 2026-10-12 | Fix input waiting and batch CPU execution | Abtsega Tesfaye Chufare
+| `8eca335` | 2026-10-14 | Add signed nearest-number program and loader | Lintao Mei
+| `4858da5` | 2026-10-15 | Add regression tests and screenshot evidence | Faris Jiwad
+| `241b46b` | 2026-10-17 | Add delivery guide and deadline note | Faris Jiwad
+| `731e690` | 2026-10-18 | Update simulator and Part 1 ZIP | Lintao Mei
+| `HEAD` | 2026-10-25 | Simplify sample documentation and rebuild Part 2 ZIP | Faris Jiwad |
 
