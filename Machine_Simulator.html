@@ -245,7 +245,9 @@
     </div>
     <div class="terminal-row">
       <button class="btn" id="program1Btn">Load Program 1</button>
+      <button class="btn" id="program2Btn">Load Program 2</button>
       <button class="btn" id="object1Btn">Export Object</button>
+      <button class="btn" id="object2Btn">Export Program 2 Object</button>
     </div>
     <div style="margin-top:10px; font-size:12px; color:#bbb; line-height:1.35;">
       Device 0 = keyboard input. Device 1 = printer output. CHK returns 1 when ready/input is waiting.
@@ -253,6 +255,7 @@
   </div>
 </div>
 <script src="programs/Program1.js"></script>
+<script src="programs/Program2.js"></script>
 <script>
 const bits = document.querySelectorAll(".bit");
 const display = document.getElementById("wordDisplay");
@@ -531,14 +534,25 @@ setPC(program.entry);
 terminalInput.focus();
 }
 document.getElementById("program1Btn").onclick = loadProgram1;
-document.getElementById("object1Btn").onclick = () => {
-const url = URL.createObjectURL(new Blob([Program1.build().objectText], {type:"text/plain"}));
+function loadProgram2(){
+resetMachine();
+terminalOutput.value = "";
+const program = Program2.build();
+loadMemoryFromText(program.objectText);
+setPC(program.entry);
+terminalInput.focus();
+}
+document.getElementById("program2Btn").onclick = loadProgram2;
+function exportObject(objectText, fileName){
+const url = URL.createObjectURL(new Blob([objectText], {type:"text/plain"}));
 const link = document.createElement("a");
 link.href = url;
-link.download = "Program1.obj.txt";
+link.download = fileName;
 link.click();
 setTimeout(() => URL.revokeObjectURL(url), 1000);
-};
+}
+document.getElementById("object1Btn").onclick = () => exportObject(Program1.build().objectText, "Program1.obj.txt");
+document.getElementById("object2Btn").onclick = () => exportObject(Program2.build().objectText, "Program2.obj.txt");
 /* Instruction execution */
 function executeInstruction(instr){
 const f = decodeInstruction(instr);
